@@ -32,7 +32,7 @@ class AccessLog
             'traceId' => $traceId,
             'respone' => json_decode($respone->getContent(), true) ?? ""
         ];
-        Log::info("source=laravel response: ", $responeData);
+        Log::info("response: ", $responeData);
         return $respone;
     }
 }

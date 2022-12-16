@@ -90,6 +90,9 @@ return [
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
             'formatter' => env('LOG_STDERR_FORMATTER'),
+	    'formatter_with' => [
+	        'format' => "source=laravel [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
+	    ],
             'with' => [
                 'stream' => 'php://stderr',
             ],
