@@ -92,7 +92,7 @@ return [
             #'formatter' => env('LOG_STDERR_FORMATTER'),
             'formatter' => Monolog\Formatter\LineFormatter::class,
 	    'formatter_with' => [
-	        'format' => "source=laravel [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
+	        'format' => "log=php-laravel [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
 	    ],
             'with' => [
                 'stream' => 'php://stderr',
