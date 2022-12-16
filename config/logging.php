@@ -89,7 +89,8 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER'),
+            #'formatter' => env('LOG_STDERR_FORMATTER'),
+            'formatter' => Monolog\Formatter\LineFormatter::class,
 	    'formatter_with' => [
 	        'format' => "source=laravel [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
 	    ],

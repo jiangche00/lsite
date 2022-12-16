@@ -26,7 +26,7 @@ class AccessLog
             'headers' => $request->header('Authorization'),
             'params' => $request->all()
         ];
-        Log::info("source=laravel request: ", $requestMessage);
+        Log::info("request: ", $requestMessage);
         $respone = $next($request);
         $responeData = [
             'traceId' => $traceId,
