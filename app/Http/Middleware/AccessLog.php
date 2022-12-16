@@ -26,13 +26,13 @@ class AccessLog
             'headers' => $request->header('Authorization'),
             'params' => $request->all()
         ];
-        Log::info("request: ", $requestMessage);
+        Log::info("source=laravel request: ", $requestMessage);
         $respone = $next($request);
         $responeData = [
             'traceId' => $traceId,
             'respone' => json_decode($respone->getContent(), true) ?? ""
         ];
-        Log::info("response: ", $responeData);
+        Log::info("source=laravel response: ", $responeData);
         return $respone;
     }
 }
